@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:wght@300;400&display=swap');
+
+:root {
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --bg-primary: #f0f8ff;
+  --bg-secondary: #e3f2fd;
+  --text-primary: #0d2137;
+  --text-secondary: #1a5276;
+  --text-muted: #5b8fa8;
+  --accent: #1e88e5;
+  --accent-light: #64b5f6;
+  --border: #b3d9f5;
+  --card-bg: rgba(255,255,255,0.82);
+  --wave-1: #b3e5fc;
+  --wave-2: #81d4fa;
+  --wave-3: #4fc3f7;
+  --sand: #fff8e7;
+}
+
+.dark {
+  --bg-primary: #050e1a;
+  --bg-secondary: #071625;
+  --text-primary: #e8f4ff;
+  --text-secondary: #7eb8d4;
+  --text-muted: #4a7a96;
+  --accent: #5bb8dc;
+  --accent-light: #7ed4f0;
+  --border: #112840;
+  --card-bg: rgba(7,22,37,0.88);
+  --wave-1: #0a1e35;
+  --wave-2: #0c2440;
+  --wave-3: #0e2a4a;
+  --sand: #0a1828;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.7;
+  overflow-x: hidden;
+  transition: background-color 0.5s ease, color 0.4s ease;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg-secondary); }
+::-webkit-scrollbar-thumb { background: var(--accent-light); border-radius: 3px; }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+::selection { background: var(--accent); color: white; }
+
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-14px); }
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.5), rgba(100,181,246,0.08));
+  border: 1px solid rgba(100,181,246,0.25);
+  animation: bubble-float linear infinite;
+  pointer-events: none;
+}
+
+@keyframes bubble-float {
+  0% { transform: translateY(100vh) scale(0); opacity: 0; }
+  8% { opacity: 0.7; transform: translateY(90vh) scale(1); }
+  92% { opacity: 0.3; }
+  100% { transform: translateY(-8vh) scale(0.7) translateX(20px); opacity: 0; }
+}
+
+.sparkle {
+  position: absolute;
+  pointer-events: none;
+  animation: sparkle-anim ease-in-out infinite;
+}
+
+@keyframes sparkle-anim {
+  0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+  30% { opacity: 1; transform: scale(1) rotate(90deg); }
+  60% { opacity: 0.6; transform: scale(0.7) rotate(180deg); }
+}
+
+.section-fade {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.section-fade.visible { opacity: 1; transform: translateY(0); }
+
+.hover-underline { position: relative; }
+.hover-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 0; height: 1px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+.hover-underline:hover::after { width: 100%; }
+
+.profile-feather {
+  -webkit-mask-image: radial-gradient(ellipse 80% 90% at 50% 44%, black 48%, transparent 78%);
+  mask-image: radial-gradient(ellipse 80% 90% at 50% 44%, black 48%, transparent 78%);
+}
+
+.photo-placeholder {
+  background: var(--bg-secondary);
+  border: 2px dashed var(--border);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  text-align: center;
+  padding: 8px;
+}
+
+input:focus, textarea:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
