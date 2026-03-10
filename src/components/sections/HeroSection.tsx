@@ -42,7 +42,7 @@ function useOceanCanvas(canvasRef: React.RefObject<HTMLCanvasElement>, darkMode:
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
-    const ctx = canvas.getContext('2d')
+    const ctx = canvas.getContext('2d')!
     if (!ctx) return
 
     const resize = () => { canvas.width = canvas.offsetWidth; canvas.height = canvas.offsetHeight }
@@ -401,7 +401,7 @@ export default function HeroSection() {
           {/* Contacts */}
           <div className="flex flex-wrap items-center gap-3 justify-center md:justify-start">
             <a
-              href="https://linkedin.com/in/YOUR_LINK"
+              href="https://www.linkedin.com/in/jun-ren-563643250/"
               target="_blank" rel="noopener noreferrer"
               className="flex items-center gap-2 px-5 py-2.5 rounded-full transition-all duration-300 hover:scale-105 text-sm"
               style={{ background: 'rgba(30,136,229,0.1)', border: '1px solid rgba(30,136,229,0.3)', color: 'var(--accent)' }}

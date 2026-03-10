@@ -63,10 +63,10 @@ function BornByTheSea() {
 
       {/* Dalian photo grid */}
       <div className="grid grid-cols-2 gap-3">
-        <PhotoSlot label="Dalian coastline" tall />
-        <PhotoSlot label="Dalian city" tall />
-        <PhotoSlot label="Hometown memory" />
-        <PhotoSlot label="Growing up" />
+        <PhotoSlot label="Dalian" src="/images/Dalian3.png" tall />
+        <PhotoSlot label="Dalian" src="/images/Dalian2.jpeg" tall />
+        <PhotoSlot label="Hometown memory" src="/images/Dalian1.jpeg" />
+        <PhotoSlot label="Undergraduate" src="/images/BostonU.jpeg" />
       </div>
     </div>
   )
@@ -79,12 +79,12 @@ function FamilySection() {
     <div ref={ref} className={`grid md:grid-cols-2 gap-8 mb-20 transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '100ms' }}>
       {/* Photos first on this row */}
       <div className="grid grid-cols-3 gap-3">
-        <PhotoSlot label="Family" tall />
-        <PhotoSlot label="Family" tall />
-        <PhotoSlot label="Family" tall />
-        <PhotoSlot label="Mutou 🐱" />
-        <PhotoSlot label="Mutou" />
-        <PhotoSlot label="Mutou" />
+        <PhotoSlot label="Family" src="/images/family1.png" tall />
+        <PhotoSlot label="Family" src="/images/family2.jpeg" tall />
+        <PhotoSlot label="Mutou 🐱" src="/images/mutou1.png" tall />
+        <PhotoSlot label="Mutou 🐱" src="/images/mutou2.png" tall />
+        <PhotoSlot label="Mutou 🐱" src="/images/mutou3.png" tall />
+        <PhotoSlot label="Mutou 🐱" src="/images/mutou4.png" tall />
       </div>
 
       <div>
@@ -110,54 +110,9 @@ function FamilySection() {
   )
 }
 
-// ── 3. Travel ─────────────────────────────────────────────────
+// ── 3. Hobbies (Singing + Swimming + Boardgame + Toy business + Community) ──
 const travelPlaces = ['Canada', 'UAE', 'Australia', 'Japan', 'South Korea', 'China · Multiple cities', 'USA · Multiple cities']
 
-function TravelSection() {
-  const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true })
-  return (
-    <div ref={ref} className={`grid md:grid-cols-2 gap-8 mb-20 transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '150ms' }}>
-      <div>
-        <div className="flex items-center gap-2 mb-3">
-          <Compass size={18} style={{ color: '#2a9d8f' }} />
-          <h3 className="text-xl font-display font-semibold" style={{ color: 'var(--text-primary)' }}>
-            The World as a Teacher
-          </h3>
-        </div>
-        <p className="text-sm leading-relaxed mb-4" style={{ color: 'var(--text-secondary)', fontWeight: 300 }}>
-          Travel has been one of my most consistent sources of perspective. Each place teaches
-          something that reading about it never could — Japan's combination of technological
-          precision and cultural reverence, the UAE's impossible ambition made physical,
-          Australia's particular relationship with nature and scale, South Korea's energy.
-        </p>
-        <p className="text-sm leading-relaxed mb-5" style={{ color: 'var(--text-secondary)', fontWeight: 300 }}>
-          Travel constantly reminds me how large and interconnected the world is — and how
-          small any single perspective is within it. I try to carry that humility into my work.
-        </p>
-        <div className="flex flex-wrap gap-2">
-          {travelPlaces.map((p) => (
-            <span key={p} className="text-xs px-3 py-1 rounded-full"
-              style={{ background: 'rgba(42,157,143,0.1)', border: '1px solid rgba(42,157,143,0.25)', color: '#2a9d8f' }}>
-              ✈ {p}
-            </span>
-          ))}
-        </div>
-      </div>
-
-      {/* Travel photos */}
-      <div className="grid grid-cols-2 gap-3">
-        <PhotoSlot label="Japan" tall />
-        <PhotoSlot label="South Korea" tall />
-        <PhotoSlot label="Australia" />
-        <PhotoSlot label="UAE" />
-        <PhotoSlot label="Canada" />
-        <PhotoSlot label="Travel memory" />
-      </div>
-    </div>
-  )
-}
-
-// ── 4. Hobbies (Singing + Swimming + Boardgame + Toy business + Community) ──
 function HobbiesSection() {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true })
   return (
@@ -169,7 +124,7 @@ function HobbiesSection() {
         </h3>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-5">
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
         {/* Singing */}
         <div className="glass-card p-5" style={{ borderTop: '3px solid #e76f51' }}>
           <div className="text-2xl mb-2">🎤</div>
@@ -214,6 +169,24 @@ function HobbiesSection() {
             ))}
           </div>
         </div>
+
+        {/* Travel */}
+        <div className="glass-card p-5" style={{ borderTop: '3px solid #2a9d8f' }}>
+          <div className="text-2xl mb-2">✈️</div>
+          <h4 className="font-display font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>Traveling the World</h4>
+          <p className="text-sm leading-relaxed mb-3" style={{ color: 'var(--text-secondary)', fontWeight: 300 }}>
+            Travel reminds me how large and interconnected the world is. Every place teaches
+            something that reading about it never could.
+          </p>
+          <div className="flex flex-wrap gap-1.5">
+            {travelPlaces.map((p) => (
+              <span key={p} className="text-xs px-2 py-0.5 rounded-full"
+                style={{ background: 'rgba(42,157,143,0.1)', border: '1px solid rgba(42,157,143,0.25)', color: '#2a9d8f', fontSize: '0.65rem' }}>
+                {p}
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   )
@@ -240,7 +213,6 @@ export default function BeyondSection() {
 
         <BornByTheSea />
         <FamilySection />
-        <TravelSection />
         <HobbiesSection />
       </div>
     </section>
