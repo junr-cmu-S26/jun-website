@@ -141,8 +141,8 @@ function useOceanCanvas(canvasRef: React.RefObject<HTMLCanvasElement>, darkMode:
 
       // Drift horizontally
       j.x += j.drift
-      if (j.x > canvas.width + 80) j.x = -80
-      if (j.x < -80) j.x = canvas.width + 80
+      if (j.x > canvas!.width + 80) j.x = -80
+      if (j.x < -80) j.x = canvas!.width + 80
     }
 
     // Draw fish
@@ -150,7 +150,7 @@ function useOceanCanvas(canvasRef: React.RefObject<HTMLCanvasElement>, darkMode:
       const wobble = Math.sin(t * 2 + f.phase) * 4
       f.y += f.vy + wobble * 0.05
       if (f.y < 60) f.vy = Math.abs(f.vy)
-      if (f.y > canvas.height - 60) f.vy = -Math.abs(f.vy)
+      if (f.y > canvas!.height - 60) f.vy = -Math.abs(f.vy)
 
       ctx.save()
       ctx.translate(f.x, f.y)
@@ -180,8 +180,8 @@ function useOceanCanvas(canvasRef: React.RefObject<HTMLCanvasElement>, darkMode:
       ctx.restore()
 
       f.x += f.speed * f.dir
-      if (f.x > canvas.width + 100) f.x = -100
-      if (f.x < -100) f.x = canvas.width + 100
+      if (f.x > canvas!.width + 100) f.x = -100
+      if (f.x < -100) f.x = canvas!.width + 100
     }
 
     // Draw 5-pointed starfish
@@ -228,8 +228,8 @@ function useOceanCanvas(canvasRef: React.RefObject<HTMLCanvasElement>, darkMode:
 
       b.y -= b.speed
       if (b.y < -20) {
-        b.y = canvas.height + 20
-        b.x = Math.random() * canvas.width
+        b.y = canvas!.height + 20
+        b.x = Math.random() * canvas!.width
       }
     }
 
