@@ -33,5 +33,5 @@ This project is open source. Feel free to use it as inspiration or a starting po
 ## Contact
 
 - Email: junren121111@gmail.com
-- LinkedIn: [linkedin.com/in/YOUR_LINK](https://linkedin.com/in/YOUR_LINK)
+- LinkedIn: https://www.linkedin.com/in/jun-ren-563643250/
 - Location: Mountain View, CA
