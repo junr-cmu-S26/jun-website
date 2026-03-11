@@ -371,29 +371,29 @@ export default function HeroSection() {
           {/* Name */}
           <h1
             className="font-display font-bold mb-2"
-            style={{ fontSize: 'clamp(2.6rem, 6vw, 4.5rem)', color: 'var(--text-primary)', letterSpacing: '-0.02em', lineHeight: 1.1 }}
+            style={{ fontSize: 'clamp(2.6rem, 6vw, 4.5rem)', color: '#ffffff', letterSpacing: '-0.02em', lineHeight: 1.1 }}
           >
             Jun Ren
           </h1>
 
           {/* Tagline */}
-          <p className="text-lg md:text-xl font-display italic mb-5" style={{ color: 'var(--text-secondary)' }}>
+          <p className="text-lg md:text-xl font-display italic mb-5" style={{ color: 'rgba(255,255,255,0.88)' }}>
             I build systems that scale.
             <br />
             I tell stories through data.
           </p>
 
           {/* Bio — 3 lines */}
-          <div className="mb-7 max-w-lg space-y-1 text-sm" style={{ lineHeight: 1.85, fontWeight: 300 }}>
-            <p style={{ color: 'var(--text-muted)' }}>
+          <div className="mb-7 max-w-lg space-y-1 text-sm" style={{ lineHeight: 1.85, fontWeight: 400 }}>
+            <p style={{ color: 'rgba(255,255,255,0.92)' }}>
               M.S. Software Engineering ·{' '}
-              <strong style={{ color: 'var(--accent)' }}>Carnegie Mellon University</strong>, Silicon Valley
+              <strong style={{ color: '#ffffff' }}>Carnegie Mellon University</strong>, Silicon Valley
             </p>
-            <p style={{ color: 'var(--text-muted)' }}>
+            <p style={{ color: 'rgba(255,255,255,0.92)' }}>
               B.S. Mathematics &amp; Computer Science ·{' '}
-              <strong style={{ color: 'var(--accent)' }}>Boston University</strong>
+              <strong style={{ color: '#ffffff' }}>Boston University</strong>
             </p>
-            <p style={{ color: 'var(--text-muted)' }}>
+            <p style={{ color: 'rgba(255,255,255,0.85)' }}>
               Building scalable infrastructure &amp; intelligent systems that power real-world applications.
             </p>
           </div>
@@ -401,21 +401,21 @@ export default function HeroSection() {
           {/* Contacts */}
           <div className="flex flex-wrap items-center gap-3 justify-center md:justify-start">
             <a
-              href="https://www.linkedin.com/in/jun-ren-563643250/"
+              href="https://linkedin.com/in/YOUR_LINK"
               target="_blank" rel="noopener noreferrer"
               className="flex items-center gap-2 px-5 py-2.5 rounded-full transition-all duration-300 hover:scale-105 text-sm"
-              style={{ background: 'rgba(30,136,229,0.1)', border: '1px solid rgba(30,136,229,0.3)', color: 'var(--accent)' }}
+              style={{ background: 'rgba(255,255,255,0.18)', border: '1px solid rgba(255,255,255,0.5)', color: '#ffffff', fontWeight: 500 }}
             >
               <Linkedin size={15} /> LinkedIn
             </a>
             <a
               href="mailto:junren121111@gmail.com"
               className="flex items-center gap-2 px-5 py-2.5 rounded-full transition-all duration-300 hover:scale-105 text-sm"
-              style={{ background: 'rgba(30,136,229,0.1)', border: '1px solid rgba(30,136,229,0.3)', color: 'var(--accent)' }}
+              style={{ background: 'rgba(255,255,255,0.18)', border: '1px solid rgba(255,255,255,0.5)', color: '#ffffff', fontWeight: 500 }}
             >
               <Mail size={15} /> junren121111@gmail.com
             </a>
-            <span className="flex items-center gap-1.5 text-sm" style={{ color: 'var(--text-muted)' }}>
+            <span className="flex items-center gap-1.5 text-sm" style={{ color: 'rgba(255,255,255,0.85)', fontWeight: 500 }}>
               <MapPin size={13} /> Mountain View, CA
             </span>
           </div>

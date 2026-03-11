@@ -1,50 +1,50 @@
 'use client'
 
 import { useInView } from 'react-intersection-observer'
-import { Users, FileText, Mic, Star } from 'lucide-react'
+import { Users, FileText, Star } from 'lucide-react'
 
 const stats = [
-  { value: '1,500+', label: 'Community Members Managed', color: '#1e88e5' },
-  { value: '30+',    label: 'Events Organized',           color: '#e76f51' },
-  { value: '1,200+', label: 'Avg Readers per Article',    color: '#2a9d8f' },
-  { value: '210K+',  label: 'Donation Records Tracked',   color: '#e63946' },
+  { value: '1,500+', label: 'Community Members',      color: '#1e88e5' },
+  { value: '3',      label: 'Teams Led',               color: '#e76f51' },
+  { value: '30+',    label: 'Events Organized',        color: '#2a9d8f' },
+  { value: '1,200+', label: 'Avg Readers per Article', color: '#f4a261' },
 ]
 
 const leaderships = [
   {
     org: 'Girls Who Impact',
     role: 'Member of Event Team',
-    period: 'Mar 2024 – Present',
+    period: 'Mar 2024 – Jan 2025',
     icon: Star,
     color: '#1e88e5',
-    story: `Girls Who Impact is a community built around lifting each other up — and being on the Event Team means I help make that real.
+    story: `Girls Who Impact is a community built around supporting each other through real career challenges, and being on the Event Team meant helping make that concrete.
 
-I help manage a community of over 1,500 female members, sharing internship opportunities provided by partner companies and answering job-related questions in group chats. The conversations are genuine: people asking about offers, negotiating salaries, figuring out which path to take. Being a resource in those moments matters.
+I helped manage a community of over 1,500 female members, sharing internship opportunities from partner companies and answering job-related questions in group chats. The conversations were practical: people working through offers, negotiating salaries, deciding between paths. Being a useful resource in those moments felt worthwhile.
 
-On the event side, I help organize the organization's major annual summit and multiple in-person member meetups across Boston. The topics — networking, mental health, women entrepreneurship — reflect what the community actually needs to talk about. Being in the room for those conversations, and helping create the space for them, has shaped how I think about leadership and community.`,
+On the event side, I helped organize the organization's annual summit and several in-person meetups in Boston, covering topics like networking, mental health, and women entrepreneurship. The topics came from what members actually wanted to talk about.`,
     highlights: [
-      'Managing community of 1,500+ female members',
-      'Sharing internship opportunities from partner companies',
-      'Organizing major annual summit + in-person meetups',
-      'Topics: networking, mental health, women entrepreneurship',
+      'Managed community of 1,500+ female members',
+      'Shared internship opportunities from partner companies',
+      'Organized annual summit and multiple in-person meetups',
+      'Topics: networking, mental health, entrepreneurship',
     ],
   },
   {
     org: 'Chinese Students and Scholar Association',
     role: 'Career Development Department — Vice President',
-    period: 'Jun 2023 – Sep 2023',
+    period: 'Sep 2021 – May 2023',
     icon: Users,
     color: '#e76f51',
-    story: `As VP of Career Development at CSSA, my job was to close the gap between what students knew about navigating careers in the US and what they needed to know.
+    story: `As VP of Career Development at CSSA, I focused on closing the gap between what international students knew about the US job market and what they needed to navigate it.
 
-I organized over eight events focused on career development — recruiting timelines, resume workshops, interview prep, and industry panels — and provided practical career resources and advice to current Boston students. The feedback loop was real: I collected suggestions from students on what topics to cover next, and iterated the programming accordingly.
+I organized over eight events covering recruiting timelines, resume reviews, interview preparation, and industry panels. After each event I collected feedback and used it to shape the next one. Students told us what was missing; we responded.
 
-The writing side was equally important. I wrote ten career development information articles per year, each reaching an average of 1,000+ readers, and continuously posted on the official public website to build a durable resource library for students navigating their first steps into the US job market.`,
+The writing was a parallel track. I wrote ten career development articles per year, each averaging 1,000+ readers, posted on the official website. The goal was to build a resource that outlasted any single event — covering topics like OPT timelines, offer negotiation, and what to expect in behavioral rounds at US companies.`,
     highlights: [
-      'Organized 8+ career development events for BU students',
-      'Wrote 10 articles/year averaging 1,000+ readers each',
-      'Provided career advice and collected student feedback',
+      'Organized 8+ career events covering recruiting, resumes, and interviews',
+      'Wrote 10 articles per year averaging 1,000+ readers each',
       'Built ongoing resource library on official website',
+      'Collected and acted on student feedback to improve programming',
     ],
   },
   {
@@ -53,18 +53,16 @@ The writing side was equally important. I wrote ten career development informati
     period: 'Sep 2021 – Aug 2023',
     icon: FileText,
     color: '#2a9d8f',
-    story: `Running the Copywriting Department at BU After School Association was my first real experience in content leadership — and it taught me how to write for an audience you actually care about.
+    story: `Running the Copywriting Department meant producing content on a consistent schedule, on topics that mattered to international students at BU.
 
-I collected popular topics and issues of concern to international students, gathered their perspectives and ideas, then wrote and published articles on the official account. In total, I published eight subjective content articles with an average of 1,200+ readers each — these weren't news summaries; they were opinion pieces that reflected the real experiences of students living far from home.
+I gathered perspectives from students, identified what they were thinking about, and turned that into articles published on the official account. Over two years, I published eight long-form pieces averaging 1,200+ readers each. These were not neutral recaps. They were first-person pieces on culture shock, academic pressure, and navigating life far from home.
 
-I also wrote weekly current affairs news roundups, synthesizing international news and campus events into digestible summaries for readers who needed to stay informed but didn't have time to do it themselves. Over two years, I published 15+ weekly editions with an average of 1,000+ readers per article.
-
-Consistency was the discipline that mattered most here. Showing up with quality content every week — regardless of how busy the semester got — is something I'm proud of.`,
+I also wrote weekly current affairs roundups, covering international news and campus events in a format students could read quickly. More than 15 editions went out, each averaging 1,000+ readers. Keeping that cadence across a full academic year, while managing coursework, is something I am proud of.`,
     highlights: [
       '8 long-form articles averaging 1,200+ readers each',
-      '15+ weekly current affairs editions, 1,000+ readers/article',
+      '15+ weekly editions, 1,000+ readers per issue',
+      'Led department content strategy across two academic years',
       'Topics drawn from real international student experiences',
-      'Led department content strategy for 2 full academic years',
     ],
   },
 ]
@@ -93,10 +91,8 @@ function LeadershipCard({ item, index }: { item: typeof leaderships[0]; index: n
       style={{ borderLeft: `3px solid ${item.color}`, transitionDelay: `${index * 130}ms` }}
     >
       <div className="flex items-start gap-4 mb-4">
-        <div
-          className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
-          style={{ background: `${item.color}18`, border: `1px solid ${item.color}35` }}
-        >
+        <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+          style={{ background: `${item.color}18`, border: `1px solid ${item.color}35` }}>
           <Icon size={17} style={{ color: item.color }} />
         </div>
         <div>
@@ -132,10 +128,7 @@ export default function LeadershipSection() {
   return (
     <section id="leadership" className="relative py-24 px-6" style={{ background: 'var(--bg-primary)' }}>
       <div className="max-w-5xl mx-auto">
-        <div
-          ref={ref}
-          className={`mb-12 transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
-        >
+        <div ref={ref} className={`mb-12 transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
           <div className="flex items-center gap-3 mb-3">
             <div className="h-px flex-1" style={{ background: 'var(--border)' }} />
             <span className="text-xs px-3 py-1 rounded-full"
@@ -148,7 +141,7 @@ export default function LeadershipSection() {
             Leadership & Impact
           </h2>
           <p className="text-base max-w-xl" style={{ color: 'var(--text-muted)', fontWeight: 300 }}>
-            Community, content, and the discipline of showing up consistently.
+            Community, content, and the work of showing up consistently.
           </p>
         </div>
 
